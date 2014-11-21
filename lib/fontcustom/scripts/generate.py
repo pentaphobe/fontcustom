@@ -80,6 +80,11 @@ def createGlyph( name, source, code ):
                 glyph.left_side_bearing = glyph.left_side_bearing - shift
                 glyph.right_side_bearing = glyph.right_side_bearing + shift
 
+    # Align bottom of glyphs
+    if options['autobaseline']:
+        bottom = glyph.boundingBox()[1]
+        glyph.transform([1, 0, 0, 1, 0, -bottom])
+
 for glyph, data in manifest['glyphs'].iteritems():
     name = createGlyph(glyph, data['source'], data['codepoint'])
 

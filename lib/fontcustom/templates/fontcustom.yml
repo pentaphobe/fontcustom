@@ -12,6 +12,7 @@ font_descent: 64
 css_selector: .icon-{{glyph}}
 preprocessor_path: ""
 autowidth: false
+autobaseline: false
 no_hash: false
 force: false
 debug: false

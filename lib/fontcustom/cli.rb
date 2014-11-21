@@ -25,7 +25,7 @@ module Fontcustom
     class_option :font_name, :aliases => "-f", :type => :string,
       :desc => "The font's name. Also determines the file names of generated templates.",
       :default => DEFAULT_OPTIONS[:font_name]
-    
+
     class_option :font_design_size, :aliases => '-x', :type => :numeric,
       :desc => "Size (in pica points) for which this font was designed.",
       :default => DEFAULT_OPTIONS[:font_design_size]
@@ -51,6 +51,9 @@ module Fontcustom
 
     class_option :autowidth, :aliases => "-a", :type => :boolean,
       :desc => "Auto-size glyphs to their individual vector widths."
+
+    class_option :autobaseline, :aliases => "-b", :type => :boolean,
+      :desc => "Auto-align all glyph bottoms to baseline"
 
     class_option :no_hash, :aliases => "-n", :type => :boolean,
       :desc => "Generate fonts without asset-busting hashes."

@@ -44,7 +44,7 @@ fontcustom help                     # See all options
 
 To preserve options between compiles, create a configuration file with
 `fontcustom config`. This should live in the directory where you run
-all `fontcustom` commands. Each of the following has its own command 
+all `fontcustom` commands. Each of the following has its own command
 line flag (`--css-selector`, etc.). Defaults values are shown.
 
 **Basics**
@@ -81,6 +81,7 @@ font_descent: 64                      # Location of font descent
 no_hash: false                        # Don't add asset-busting hashes to font files
 autowidth: false                      # Automatically size glyphs based on the width of
                                       # their individual vectors
+autobaseline: false                   # Automatically align glyph bottoms to the baseline
 ```
 
 **Templates**
@@ -92,7 +93,7 @@ css_selector: .icon-{{glyph}}         # CSS selector format (`{{glyph}}` is repl
 preprocessor_path: ""                 # Font path used in CSS proprocessor templates
                                       # Set to "" or false to use the bare font name
 
-# Custom templates should live in the `input` 
+# Custom templates should live in the `input`
 # or `input[:templates]` directory and be added
 # to `templates` as their basename:
 templates: [ preview, VectorIcons.less ]
@@ -100,7 +101,7 @@ templates: [ preview, VectorIcons.less ]
 
 Custom templates have access to `@options`, `@manifest`, and the following ERB helpers:
 
-* `font_name` 
+* `font_name`
 * `font_face`: FontSpring's [Bulletproof @font-face syntax](http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax)
   - Font paths can be modified by passing a hash. `font_face(url: "font-url", path: @font_path_alt)`
   - The `preview`, `scss`, and `scss-rails` templates use modified font paths. Compass users should use the `scss-rails` template.
